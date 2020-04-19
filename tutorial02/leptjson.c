@@ -19,7 +19,7 @@ static void lept_parse_whitespace(lept_context* c) {
 // type: LEPT_TRUE/LEPT_FALSE/LEPT_NULL
 static int lept_parse_literal(lept_context* c, lept_value* v, const char* literal, lept_type type) {
     EXPECT(c, literal[0]);
-    int i;
+    size_t i;
     for (i = 0; literal[i+1] != '\0'; i++) {
         if (c->json[i] != literal[i+1]) {
             return LEPT_PARSE_INVALID_VALUE;
